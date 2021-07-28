@@ -1,0 +1,34 @@
+@import "../variables";
+@import "../mixins";
+.header li {
+  float: left;
+  list-style-type: none;
+}
+.header a {
+  text-decoration: none;
+  color: $color-white;
+}
+.header ul a {
+  @include flex(row, unset, baseline);
+  margin-right: 30px;
+  text-decoration: none;
+  color: $color-white;
+  font-size: 14px;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.header {
+  height: 80px;
+  border-bottom: 1px solid $color-white;
+  color: $color-white;
+  font-size: 36px;
+  @include flex(row, unset, baseline);
+  padding-left: 40px;
+}
+
+.accent {
+  text-transform: uppercase;
+  opacity: 0.8;
+  font-weight: 800;
+}
