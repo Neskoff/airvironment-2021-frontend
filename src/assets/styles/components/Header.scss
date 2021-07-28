@@ -4,8 +4,11 @@
   float: left;
   list-style-type: none;
 }
-
 .header a {
+  text-decoration: none;
+  color: $color-white;
+}
+.header ul a {
   @include flex(row, unset, baseline);
   margin-right: 30px;
   text-decoration: none;
