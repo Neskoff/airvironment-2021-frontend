@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="header">
-      <Link path="/test">
+      <Link path="/">
         <span className="accent">Air</span>vironment
       </Link>
       <ul>
