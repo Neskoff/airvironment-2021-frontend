@@ -5,7 +5,7 @@
   list-style-type: none;
 }
 
-.header a {
+.header ul a {
   @include flex(row, unset, baseline);
   margin-right: 30px;
   text-decoration: none;
@@ -13,6 +13,12 @@
   font-size: 14px;
   opacity: 0.8;
   text-transform: uppercase;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 36px;
+  color: $color-white;
 }
 
 .header {
