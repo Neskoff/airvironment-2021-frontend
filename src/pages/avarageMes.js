@@ -11,7 +11,7 @@ const averageMes = () => {
   return (
     <div className="renderDiv">
       {renderList.map(() => {
-        return <AverageCard temperature={3} />;
+        return <AverageCard temperature={"3°"} />;
       })}
     </div>
   );

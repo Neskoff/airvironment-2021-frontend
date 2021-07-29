@@ -39,7 +39,19 @@
 .imageArea svg {
   margin-bottom: 30px;
 }
-
+.shift {
+  font-size: 15px;
+  margin-top: 9px;
+}
+.pollution {
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  margin: 5px 0 0 0;
+  padding: 0;
+  display: flex;
+  font-weight: 900;
+}
 .textAreaLeft {
   display: flex;
   flex-direction: column;
@@ -61,6 +73,9 @@
 .break {
   height: 27px;
 }
+.breakTwice {
+  height: 30px;
+}
 
 .mesArea {
   font-size: 26px;
@@ -74,7 +89,7 @@
   margin-left: 25px;
 }
 
-.mesArea p {
+.data {
   text-align: right;
   margin: 0;
   padding: 0;

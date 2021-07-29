@@ -1,10 +1,11 @@
 import React from "react";
 import "../assets/styles/components/averageCard.scss";
+import { upArrow, downArrow } from "../assets/icons";
 const AverageCard = ({ temperature }) => {
   return (
     <div className="wrapper">
       <div className="cardTitle">Wed</div>
-      <div className="cardSubtitle">01.01.2021</div>
+      <div className="cardSubtitle">01.Jan.2021</div>
       <hr color="#ffffff" width="80%" />
       <div className="mainArea">
         <div className="imageArea">
@@ -86,19 +87,36 @@ const AverageCard = ({ temperature }) => {
           </svg>
         </div>
         <div className="textAreaLeft">
-          <p>?º</p>
-          <p>?30Cº</p>
+          <p>
+            <span>{upArrow()} 30Cº</span>
+          </p>
+          <p>
+            <span>{downArrow()} 22Cº</span>
+          </p>
           <div className="break"></div>
-          <p>56%</p>
-          <p>40%</p>
-          <div className="break"></div>
-          <p>0.70ppb</p>
-          <p>0.50ppb</p>
+          <p>
+            <span>{upArrow()} 56%</span>
+          </p>
+          <p>
+            {" "}
+            <span>{downArrow()} 40%</span>
+          </p>
+          <div className="breakTwice"></div>
+          <p>
+            {" "}
+            <span>{upArrow()} 0.70ppb</span>
+          </p>
+          <p>
+            {" "}
+            <span>{downArrow()} 0.50ppb</span>
+          </p>
         </div>
         <div className="mesArea">
-          <p>/{temperature}</p>
-          <p>/ 48%</p>
-          <p>/ 60</p>
+          <p className="data">/ {temperature}</p>
+          <p className="data">/ 48%</p>
+          <p className="pollution">
+            / 60 <sub className="shift"> ppb</sub>
+          </p>
         </div>
       </div>
     </div>
