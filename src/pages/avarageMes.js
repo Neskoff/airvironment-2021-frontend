@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AverageCard from "../components/averageCard";
 import "../assets/styles/components/averageCard.scss";
-const averageMes = () => {
-  const cardnumber = 20;
-  let renderList = [];
-
-  for (let i = 0; i < cardnumber; i++) {
-    renderList.push(i);
-  }
+const AverageMes = () => {
+  const cardnumber = 15;
+  const [fetchData, setData] = useState({});
+  useEffect(() => {
+    fetch("https://airvironment.dev/api/measurements")
+      .then((response) => response.json())
+      .then((data) => setData(data));
+  }, []);
+  console.log(fetchData);
   return (
     <div className="renderDiv">
-      {renderList.map(() => {
-        return <AverageCard temperature={"3°"} />;
-      })}
+      {fetchData.response?.length &&
+        fetchData.response.map((response) => {
+          return fetchData.response ? (
+            <AverageCard fetchData={response} />
+          ) : (
+            <div></div>
+          );
+        })}
     </div>
   );
 };
-export default averageMes;
+export default AverageMes;
