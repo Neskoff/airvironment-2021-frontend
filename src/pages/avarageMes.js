@@ -2,7 +2,8 @@ import React from "react";
 import AverageCard from "../components/averageCard";
 import "../assets/styles/components/averageCard.scss";
 const averageMes = () => {
-  const cardnumber = 20;
+  const cardnumber = 15;
+  let responseArray = [];
   let renderList = [];
 
   for (let i = 0; i < cardnumber; i++) {

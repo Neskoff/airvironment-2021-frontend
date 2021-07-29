@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="header">
-      <Link path="/">
+      <Link to="/">
         <span className="accent">Air</span>vironment
       </Link>
       <ul>
         <li>
-          <a href="/">All Data</a>
+          <Link to="/avg">All Data</Link>
         </li>
         <li>
           <a href="/">Averages</a>
