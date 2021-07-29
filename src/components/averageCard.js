@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/styles/components/averageCard.scss";
 import { upArrow, downArrow } from "../assets/icons";
-const AverageCard = ({ temperature }) => {
+const AverageCard = ({ fetchData }) => {
   return (
     <div className="wrapper">
       <div className="cardTitle">Wed</div>
@@ -112,10 +112,15 @@ const AverageCard = ({ temperature }) => {
           </p>
         </div>
         <div className="mesArea">
-          <p className="data">/ {temperature}</p>
-          <p className="data">/ 48%</p>
+          <p className="data">
+            / {fetchData.temperature.toString().substr(0, 2)}º
+          </p>
+          <p className="data">
+            / {fetchData.humidity.toString().substr(0, 2)}%
+          </p>
           <p className="pollution">
-            / 60 <sub className="shift"> ppb</sub>
+            / {fetchData.pollution.toString().substr(0, 2)}{" "}
+            <sub className="shift"> ppb</sub>
           </p>
         </div>
       </div>
