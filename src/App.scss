@@ -1,7 +1,14 @@
 @import "assets/styles/variables";
 
-.app {
-  background: $background;
+.html,
+body,
+#app,
+#app > div {
   width: 100vw;
   height: 100vh;
+}
+
+body {
+  background: $background;
+  background-size: cover;
 }
