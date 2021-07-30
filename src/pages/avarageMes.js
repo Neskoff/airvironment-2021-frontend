@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import AverageCard from "../components/averageCard";
 import "../assets/styles/components/averageCard.scss";
 const AverageMes = () => {
-  const cardnumber = 15;
   const [fetchData, setData] = useState({});
   useEffect(() => {
     fetch("https://airvironment.dev/api/measurements")
