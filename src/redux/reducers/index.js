@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-
-const rootReducer = combineReducers();
+import averageValues from "./averageValuesReducer";
+const rootReducer = combineReducers({ averageValues });
 
 export default rootReducer;
