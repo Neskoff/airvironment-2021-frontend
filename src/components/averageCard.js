@@ -1,11 +1,18 @@
 import React from "react";
 import "../assets/styles/components/averageCard.scss";
 import { upArrow, downArrow } from "../assets/icons";
+import moment from "moment";
 const AverageCard = ({ fetchData }) => {
   return (
     <div className="wrapper">
-      <div className="cardTitle">Wed</div>
-      <div className="cardSubtitle">01.Jan.2021</div>
+      <div className="cardTitle">
+        {" "}
+        {moment(fetchData.date, "DD.M.YYYY").format("ddd")}
+      </div>
+      <div className="cardSubtitle">
+        {" "}
+        {moment(fetchData.date, "DD.M.YYYY").format("DD. MMM. YYYY.")}
+      </div>
       <hr color="#ffffff" width="80%" />
       <div className="mainArea">
         <div className="imageArea">
@@ -88,39 +95,46 @@ const AverageCard = ({ fetchData }) => {
         </div>
         <div className="textAreaLeft">
           <p>
-            <span>{upArrow()} 30Cº</span>
+            <span>
+              {upArrow()} {fetchData.maxTemperature}Cº
+            </span>
           </p>
           <p>
-            <span>{downArrow()} 22Cº</span>
+            <span>
+              {downArrow()} {fetchData.minTemperature}Cº
+            </span>
           </p>
           <div className="break"></div>
           <p>
-            <span>{upArrow()} 56%</span>
+            <span>
+              {upArrow()} {fetchData.maxPollution}%
+            </span>
           </p>
           <p>
             {" "}
-            <span>{downArrow()} 40%</span>
+            <span>
+              {downArrow()} {fetchData.minPollution}%
+            </span>
           </p>
           <div className="breakTwice"></div>
           <p>
             {" "}
-            <span>{upArrow()} 0.70ppb</span>
+            <span>
+              {upArrow()} {fetchData.maxPollution}ppb
+            </span>
           </p>
           <p>
             {" "}
-            <span>{downArrow()} 0.50ppb</span>
+            <span>
+              {downArrow()} {fetchData.minPollution}ppb
+            </span>
           </p>
         </div>
         <div className="mesArea">
-          <p className="data">
-            / {fetchData.temperature.toString().substr(0, 2)}º
-          </p>
-          <p className="data">
-            / {fetchData.humidity.toString().substr(0, 2)}%
-          </p>
+          <p className="data">/ {fetchData.averageTemperature}º</p>
+          <p className="data">/ {fetchData.averageHumidity}%</p>
           <p className="pollution">
-            / {fetchData.pollution.toString().substr(0, 2)}{" "}
-            <sub className="shift"> ppb</sub>
+            / {fetchData.averagePollution} <sub className="shift"> ppb</sub>
           </p>
         </div>
       </div>
