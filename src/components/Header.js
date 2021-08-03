@@ -9,10 +9,10 @@ const Header = () => {
       </Link>
       <ul>
         <li>
-          <Link to="/avg">All Data</Link>
+          <Link to="/all">All Data</Link>
         </li>
         <li>
-          <a href="/">Averages</a>
+          <Link to="/avg">Averages</Link>
         </li>
       </ul>
     </div>
