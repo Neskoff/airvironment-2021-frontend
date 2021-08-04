@@ -1,12 +1,11 @@
 @import "../mixins";
 @import "../variables";
-* {
-  color: white;
-}
+
 .all-data-row {
   margin: 0 16px 24px;
   @include flex(column);
   width: 325px;
+  color: white;
   .header-row {
     @include flex(row, space-between);
     margin-bottom: 8px;

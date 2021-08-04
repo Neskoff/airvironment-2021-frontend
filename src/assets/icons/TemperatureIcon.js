@@ -1,6 +1,6 @@
 import React from "react";
 
-const TemperatureIcon = () => {
+const TemperatureIconb = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -28,4 +28,4 @@ const TemperatureIcon = () => {
     </svg>
   );
 };
-export default TemperatureIcon;
+export default TemperatureIconb;

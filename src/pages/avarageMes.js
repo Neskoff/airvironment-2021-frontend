@@ -3,6 +3,7 @@ import AverageCard from "../components/averageCard";
 import "../assets/styles/components/averageCard.scss";
 import { loadAverageValues } from "../redux/actions/averageActions";
 import { connect } from "react-redux";
+import { Filters } from "../components";
 
 const AverageMes = ({ averageValues, getAverageValues }) => {
   useEffect(() => {
@@ -13,6 +14,7 @@ const AverageMes = ({ averageValues, getAverageValues }) => {
   }, [getAverageValues, averageValues]);
   return (
     <div className="renderDiv">
+      <Filters></Filters>
       {averageValues?.length &&
         averageValues.map((response) => {
           return averageValues ? (
