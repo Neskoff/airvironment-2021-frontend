@@ -19,12 +19,14 @@ function valuetext(value) {
   return `${value}h`;
 }
 
-export default function RangeSlider() {
+export default function RangeSlider({ getRange }) {
   const [value, setValue] = React.useState([0, 24]);
+  getRange(value);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <CustomRange
       value={value}

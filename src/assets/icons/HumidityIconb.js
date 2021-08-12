@@ -12,7 +12,7 @@ const HumidityIconb = () => {
         id="hum_ico"
         data-name="hum ico"
         transform="translate(-75 -161)"
-        opacity="0.204"
+        opacity="1"
       >
         <rect
           id="Rectangle_6"

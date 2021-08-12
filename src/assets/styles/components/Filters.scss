@@ -90,13 +90,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 20px;
   transform: translateX(10px);
 }
+
+.resp1 {
+  display: flex;
+}
 .absolutepic {
-  background: url("../../icons/dropdown2.svg") no-repeat scroll right bottom;
+  background: url("../../icons/circle.svg") no-repeat scroll right bottom;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .absolutepic2 {
   background: url("../../icons/dropdown2.svg") no-repeat scroll right bottom;
   padding-right: 13px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .MuiSlider-valueLabel {
@@ -112,4 +121,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .checkcontainer {
   transform: translate(25px, 15px);
   cursor: pointer;
+}
+
+.closecontainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: white;
+  border-radius: 50%;
+  color: #10beb8;
+  transform: translate(-20px, 70px);
+  cursor: pointer;
+}
+
+#wrapfilter {
+  overflow-y: hidden;
+  max-height: 500px; /* approximate max height */
+  transition: all 1s ease-in-out;
+}
+
+@media only screen and (max-width: 600px) {
+  .filterwrapper {
+    flex-direction: column;
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AverageCard from "../components/averageCard";
 import "../assets/styles/components/averageCard.scss";
 import { loadAverageValues } from "../redux/actions/averageActions";
@@ -11,10 +11,14 @@ const AverageMes = ({ averageValues, getAverageValues }) => {
       all: true,
     };
     getAverageValues(params);
-  }, [getAverageValues, averageValues]);
+  }, [getAverageValues]);
+  const [useChildData, setChildData] = useState(null);
+  const handleEvent = (childData) => {
+    setChildData(childData);
+  };
   return (
     <div className="renderDiv">
-      <Filters></Filters>
+      <Filters onEventclick={getAverageValues} />
       {averageValues?.length &&
         averageValues.map((response) => {
           return averageValues ? (
@@ -34,4 +38,5 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   getAverageValues: loadAverageValues,
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(AverageMes);

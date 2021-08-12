@@ -15,12 +15,20 @@ export default function AverageValuesReducer(
   };
 
   switch (action.type) {
+    case types.AVERAGE_MEASUREMENTS_EMPTY:
+      return [];
     case types.AVERAGE_MEASUREMENTS_SUCCESS:
-      action.response.forEach((response) => {
-        response.date = moment(response.created).format(DATE_FORMAT);
-      });
+      action.response.response
+        ? action.response.response.forEach((response) => {
+            response.date = moment(response.created).format(DATE_FORMAT);
+          })
+        : action.response.forEach((response) => {
+            response.date = moment(response.created).format(DATE_FORMAT);
+          });
 
-      let dataGroupedByDate = groupBy(action.response, "date");
+      let dataGroupedByDate = action.response.response
+        ? groupBy(action.response.response, "date")
+        : groupBy(action.response, "date");
 
       return dataGroupedByDate.map((data) => {
         let valueSum = {

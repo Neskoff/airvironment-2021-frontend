@@ -8,6 +8,7 @@ import HumidityIconb from "./HumidityIconb";
 import PollutionIconb from "./PollutionIconb";
 import Dropdown from "./Dropdown";
 import CheckMark from "./check";
+import Cross from "./Cross";
 export {
   upArrow,
   downArrow,
@@ -19,4 +20,5 @@ export {
   PollutionIconb,
   Dropdown,
   CheckMark,
+  Cross,
 };

@@ -27,6 +27,10 @@ export function loadAverageValuesFailure(error) {
   return { type: types.AVERAGE_MEASUREMENTS_FAILURE, error };
 }
 
+export function emptyResponse() {
+  return { type: types.AVERAGE_MEASUREMENTS_EMPTY };
+}
+
 /**
  * Fires a get request to fetch average values and returns the received response.
  * @param params
@@ -34,6 +38,7 @@ export function loadAverageValuesFailure(error) {
  */
 export function loadAverageValues(params) {
   return function (dispatch) {
+    dispatch(emptyResponse());
     dispatch(loadAverageValuesRequest());
     return measurementsApi
       .getMeasurements(params)
